@@ -8,24 +8,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v2
-      - name: Adding Node.js
-        uses: actions/setup-node@v2
+      - name: Angular Deploy gh-pages Actions
+        uses: AhsanAyaz/angular-deploy-gh-pages-actions@v1.4.0
         with:
-          node-version: 18.10.0
-      - name: Install Dependencies
-        run: npm install
-      
-      - name: pg install
-        run: npm install gh-pages --save-dev
-      - name: angular-cli-ghpages@2.0.1
-        run: angular-cli-ghpages@2.0.1
-
-      - name: Build Angular App
-        run: npm run build
-      - name: Deploy to gh pages
-        run: |
-          npx angular-cli-ghpages --dir=docs/SMIweb
-          CI: true
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          github_access_token: ${{ secrets.GH_TOKEN }}
+          angular_project_dir: ./
+          build_configuration: production
+          base_href: /docs
