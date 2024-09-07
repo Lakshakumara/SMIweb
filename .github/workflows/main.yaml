@@ -16,6 +16,9 @@ jobs:
           node-version: 18.10.0
       - name: Install Dependencies
         run: npm install
+      
+      - name: pg install
+        run: ng add angular-cli-ghpages@2.0.1
 
       - name: Build Angular App
         run: npm run build
