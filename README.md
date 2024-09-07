@@ -1,6 +1,8 @@
 # Smiweb
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.8.
+deployed Run ng build --output-path docs --base-href /SMIweb/
+
+This project was generated with Angular CLI version 16.2.8.
 
 ## Development server
 
