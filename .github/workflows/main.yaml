@@ -18,7 +18,7 @@ jobs:
         run: npm install
       
       - name: pg install
-        run: ng add angular-cli-ghpages@2.0.1
+        run: npm install gh-pages --save-dev
 
       - name: Build Angular App
         run: npm run build
