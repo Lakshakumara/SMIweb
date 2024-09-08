@@ -16,16 +16,11 @@ jobs:
           node-version: 18.10.0
       - name: Install Dependencies
         run: npm install
-      
-      - name: pg install
-        run: npm install gh-pages --save-dev
-      - name: angular-cli-ghpages@2.0.1
-        run: angular-cli-ghpages@2.0.1
 
       - name: Build Angular App
         run: npm run build
       - name: Deploy to gh pages
         run: |
-          npx angular-cli-ghpages --dir=docs/SMIweb
+          npx angular-cli-ghpages --dir=docs
           CI: true
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
